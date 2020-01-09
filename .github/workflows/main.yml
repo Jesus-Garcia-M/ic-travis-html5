@@ -8,12 +8,11 @@ jobs:
     name: Deploying to surge
     steps:
       - uses: actions/checkout@v1
-      - name: Validator
-      - run: pip install html5validator 
-      - run: html5validator --root _build/
       - name: Install surge and fire deployment
         uses: actions/setup-node@v1
         with:
           node-version: 8
+      - run: pip install html5validator 
+      - run: html5validator --root _build/
       - run: npm install -g surge
       - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
