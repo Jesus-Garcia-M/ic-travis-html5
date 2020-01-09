@@ -12,7 +12,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 8
-    - run: pip3 install html5validator
+    - run: pip install html5validator
     - run: html5validator --root _build/
     - run: npm install -g surge
     - run: surge ./_build ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
