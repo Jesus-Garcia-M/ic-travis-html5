@@ -13,9 +13,9 @@ jobs:
         with:
           node-version: 8
       - run: npm install -g surge
-      - uses: dswistowski/surge-sh-action@v1
+      - uses: Jesus-Garcia-M/ic-travis-html5@v1
         with:
           domain: 'angry-otter.surge.sh'
-          project: '.'
+          project: './_build'
           login: ${{ secrets.SURGE_LOGIN }}
           token: ${{ secrets.SURGE_TOKEN }}
