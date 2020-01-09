@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 8
       - run: npm install -g surge
-uses: dswistowski/surge-sh-action@v1
+- uses: dswistowski/surge-sh-action@v1
 with:
   domain: 'angry-otter.surge.sh'
   project: '.'
