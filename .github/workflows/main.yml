@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Validator
-        run: pip install html5validator 
-        run: html5validator --root _build/
+      - run: pip install html5validator 
+      - run: html5validator --root _build/
       - name: Install surge and fire deployment
         uses: actions/setup-node@v1
         with:
